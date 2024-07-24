@@ -1,5 +1,9 @@
 import 'package:assign2_part2/course_card.dart';
+import 'package:assign2_part2/models/course_card_model.dart';
 import 'package:flutter/material.dart';
+import 'anroid_course.dart';
+import 'fullStack_course.dart';
+import 'ios_course.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "HomeScreen";
@@ -30,17 +34,26 @@ class _HomeScreenState extends State<HomeScreen> {
             margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 15.0),
             child: Column(
               children: [
-                Expanded(
-                  child: CourseCard(
-                      image: "Android.jpeg", courseName: "ANDROID COURSE"),
+                CourseCard(
+                  courseCardModel: CourseCardModel(
+                    image: "Android.jpeg",
+                    courseName: "ANDROID COURSE",
+                    cousrePage: AndroidCourse.routeName,
+                  ),
                 ),
-                Expanded(
-                  child:
-                      CourseCard(image: "IOS.jpeg", courseName: "IOS COURSE"),
+                CourseCard(
+                  courseCardModel: CourseCardModel(
+                    image: "IOS.jpeg",
+                    courseName: "IOS COURSE",
+                    cousrePage: IosCourse.routeName,
+                  ),
                 ),
-                Expanded(
-                  child: CourseCard(
-                      image: "fullStack.jpeg", courseName: " FULL STACK"),
+                CourseCard(
+                  courseCardModel: CourseCardModel(
+                    image: "fullStack.jpeg",
+                    courseName: "FULL STACK",
+                    cousrePage: FullstackCourse.routeName,
+                  ),
                 ),
               ],
             ),
